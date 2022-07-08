@@ -1,0 +1,36 @@
+.card {
+  display: block;
+  background-color: #dfdfdf;
+  color: #101010;
+  border-radius: 4px;
+  border-bottom: 5px solid turquoise;
+  padding: 16px;
+  height: 100%;
+}
+
+.content {
+  display: block;
+  height: 100%;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.readingTime {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(60, 111, 241);
+  font-weight: 500;
+}
