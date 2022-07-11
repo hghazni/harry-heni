@@ -89,7 +89,7 @@ const GET_COUNTRIES = gql`
         return children;
       })()}
       </div>
-      <div ref={ref} style={{ width: "100%", height: "40px" }}>
+      <div ref={ref} style={{ width: "100%", height: "20px" }}>
         Bottom
       </div>
       </div>
