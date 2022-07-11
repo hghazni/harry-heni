@@ -39,15 +39,16 @@ const GET_COUNTRIES = gql`
         country = finalData[i];
         return (
           <Card 
-          key={country.id} 
-          code={country.code} 
-          capital={country.capital} 
-          name={country.name}
-          translation={{
-            cta: 'Find out more',
-            capital: 'Capital'
-          }}
-          onClick={() => console.log(`You clicked ${country.name}`)} />
+            key={country.id} 
+            code={country.code} 
+            capital={country.capital} 
+            name={country.name}
+            languages={country.languages}
+            translation={{
+              cta: 'Find out more',
+              capital: 'Capital'
+            }}
+            onClick={() => console.log(`You clicked ${country.name}`)} />
         )
        }
     }

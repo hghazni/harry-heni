@@ -3,9 +3,11 @@ import scss from './Card.module.scss';
 import { CardProps } from './Card.types';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import ReactCountryFlag from 'react-country-flag';
+import { Chip } from '@mui/material';
 
 const Card = (props: CardProps) => {
-  const { className, name, capital, code, onClick, translation } = props;
+  const { className, name, capital, code, onClick, translation, languages } = props;
+  
   return (
     <div className={`${scss.card} ${className}`}>
       <div className={scss.content}>
@@ -22,6 +24,14 @@ const Card = (props: CardProps) => {
         <p className={scss.name}>{name}</p>
         <p className={scss.capital}><b>{translation.capital}</b>: {capital}</p>
         <a href={`#${name}`} tabIndex={0} className={scss.readingTime} onClick={onClick}>{translation.cta}<ArrowRightAltIcon /></a>
+        <div className={scss.languageBar}>
+          <b style={scss.languageLabel}>Languages:</b>
+          {languages.map((language, id: number) => {
+            return (
+              <Chip title={language.code?.toLocaleUpperCase()} label={language.name} key={id} />
+            )
+          })}      
+        </div>
       </div>
     </div>
   )

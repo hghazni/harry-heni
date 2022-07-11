@@ -38,3 +38,10 @@
     cursor: pointer;
   }
 }
+
+.languageBar {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  gap: 8px;
+}

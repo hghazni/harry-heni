@@ -5,14 +5,19 @@ import { CardProps } from "./Card.types";
 
 describe("Card Component", () => {
   let props: CardProps;
-
   beforeEach(() => {
     props = {
-      className: "",
+      className: '',
       code: "GB",
       name: "Great Britain",
       capital: "London",
       onClick: () => console.log('something'),
+      languages: [
+        {
+          name: 'English',
+        code: 'En'
+        }
+      ],
       translation: {
         cta: 'Find out more',
         capital: 'Capital',
