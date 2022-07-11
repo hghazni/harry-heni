@@ -12,10 +12,13 @@
 
 .displayInfiniteCards {
   display: grid;
+  justify-content: center;
   grid-gap: 16px;
   margin-bottom: 60px !important;
+  width: 100%;
 
   @media  screen and (min-width: 770px) {
     grid-template-columns: repeat(auto-fit, 309px);
+    width: auto;
   }
 }

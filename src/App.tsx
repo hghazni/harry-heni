@@ -26,21 +26,31 @@ const GET_COUNTRIES = gql`
     const DisplayInfiniteCards = (i: number): any => {
       const { loading, error, data } = useQuery(GET_COUNTRIES);
     
-    
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
     
+      // Sets GraphQL query in state - ideally we want to make just a single call during the user session
       setData(data.countries);    
 
-      return (
-          <Card key={finalData[i].id} code={finalData[i].code} description={finalData[i].capital} title={finalData[i].name} onClick={() => console.log('jhasd')} />
-      )
+      // Checks if country is available in state
+       if (finalData[i]) {
+        let country: any;
+        country = finalData[i];
+        return (
+          <Card 
+          key={country.id} 
+          code={country.code} 
+          capital={country.capital} 
+          name={country.name} 
+          onClick={() => console.log(`You clicked ${country.name}`)} />
+        )
+       }
     }
     
-    function Component({ id }: { id: number }) {
+    const IfiniteComponent = ({ id }: { id: number }) => {
       useEffect(() => {
         fetch(finalData)
-          .then((res) => res.json())
+          .then((res) => res)
       }, []);
       return (
         <div className={scss.displayInfiniteCards}>
@@ -68,17 +78,18 @@ const GET_COUNTRIES = gql`
     return (
       <div className={scss.app}>
         <h2>Harry's Infinite Scroll Feed</h2>
+        <p>By Harry Ashton | <a href={'mailto: harry.ashton.uk@gmail.com'}>harry.ashton.uk@gmail.com</a></p>
         <br />
       <div className={scss.infiniteWrapper}>
       {(() => { 
         const children = [];
         for (let i = 1; i <= count * pageSize; i++) {
-          children.push(<Component key={i} id={i} />);
+          children.push(<IfiniteComponent key={i} id={i} />);
         }
         return children;
       })()}
       </div>
-      <div ref={ref} style={{ width: "100%", height: "20px" }}>
+      <div ref={ref} style={{ width: "100%", height: "40px" }}>
         Bottom
       </div>
       </div>

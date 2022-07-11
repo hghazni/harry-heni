@@ -1,7 +1,7 @@
 export interface CardProps {
   code: string,
-  title: string,
-  description: string,
+  name: string,
+  capital: string,
   onClick: () => void,
   className?: string,
 }

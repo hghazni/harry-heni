@@ -13,12 +13,12 @@
   height: 100%;
 }
 
-.title {
+.name {
   font-weight: 600;
   font-size: 18px;
 }
 
-.description {
+.capital {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;  
@@ -33,4 +33,8 @@
   justify-content: space-between;
   color: rgb(60, 111, 241);
   font-weight: 500;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
