@@ -26,13 +26,14 @@
   font-size: 16px;
 }
 
-.readingTime {
+.findOutMore {
   margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: rgb(60, 111, 241);
   font-weight: 500;
+  padding-top: 32px;
 
   &:hover {
     cursor: pointer;

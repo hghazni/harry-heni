@@ -23,7 +23,6 @@ const Card = (props: CardProps) => {
           }} />
         <p className={scss.name}>{name}</p>
         <p className={scss.capital}><b>{translation.capital}</b>: {capital}</p>
-        <a href={`#${name}`} tabIndex={0} className={scss.readingTime} onClick={onClick}>{translation.cta}<ArrowRightAltIcon /></a>
         <div className={scss.languageBar}>
           <b style={scss.languageLabel}>Languages:</b>
           {languages.map((language, id: number) => {
@@ -32,6 +31,13 @@ const Card = (props: CardProps) => {
             )
           })}      
         </div>
+        <a 
+          href={`#${name}`} 
+          tabIndex={0} 
+          className={scss.findOutMore} 
+          onClick={onClick}>
+            {translation.cta}<ArrowRightAltIcon />
+        </a>
       </div>
     </div>
   )
