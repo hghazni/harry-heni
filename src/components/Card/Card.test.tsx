@@ -13,6 +13,10 @@ describe("Card Component", () => {
       name: "Great Britain",
       capital: "London",
       onClick: () => console.log('something'),
+      translation: {
+        cta: 'Find out more',
+        capital: 'Capital',
+      }
     };
   });
 

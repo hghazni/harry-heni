@@ -5,7 +5,7 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import ReactCountryFlag from 'react-country-flag';
 
 const Card = (props: CardProps) => {
-  const { className, name, capital, code, onClick } = props;
+  const { className, name, capital, code, onClick, translation } = props;
   return (
     <div className={`${scss.card} ${className}`}>
       <div className={scss.content}>
@@ -20,8 +20,8 @@ const Card = (props: CardProps) => {
             lineHeight: '2em',
           }} />
         <p className={scss.name}>{name}</p>
-        <p className={scss.capital}>{capital}</p>
-        <a href={`#${name}`} tabIndex={0} className={scss.readingTime} onClick={onClick}>3 min article <ArrowRightAltIcon /></a>
+        <p className={scss.capital}><b>{translation.capital}</b>: {capital}</p>
+        <a href={`#${name}`} tabIndex={0} className={scss.readingTime} onClick={onClick}>{translation.cta}<ArrowRightAltIcon /></a>
       </div>
     </div>
   )

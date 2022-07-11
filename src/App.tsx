@@ -42,7 +42,11 @@ const GET_COUNTRIES = gql`
           key={country.id} 
           code={country.code} 
           capital={country.capital} 
-          name={country.name} 
+          name={country.name}
+          translation={{
+            cta: 'Find out more',
+            capital: 'Capital'
+          }}
           onClick={() => console.log(`You clicked ${country.name}`)} />
         )
        }

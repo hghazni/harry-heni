@@ -4,4 +4,8 @@ export interface CardProps {
   capital: string,
   onClick: () => void,
   className?: string,
+  translation: {
+    cta: string
+    capital: string,
+  }
 }
