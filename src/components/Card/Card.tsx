@@ -21,7 +21,7 @@ const Card = (props: CardProps) => {
           }} />
         <p className={scss.name}>{name}</p>
         <p className={scss.capital}>{capital}</p>
-        <a tabIndex={0} className={scss.readingTime} onClick={onClick}>3 min article <ArrowRightAltIcon /></a>
+        <a href="" tabIndex={0} className={scss.readingTime} onClick={onClick}>3 min article <ArrowRightAltIcon /></a>
       </div>
     </div>
   )

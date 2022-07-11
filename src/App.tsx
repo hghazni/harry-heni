@@ -73,7 +73,7 @@ const GET_COUNTRIES = gql`
     useEffect(() => {
       //load next page when bottom is visible
       isBottomVisible && setCount(count + 1);
-    }, [isBottomVisible]);
+    }, [isBottomVisible, count]);
 
     return (
       <div className={scss.app}>
