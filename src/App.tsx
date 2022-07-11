@@ -30,6 +30,7 @@ const GET_COUNTRIES = gql`
       if (error) return <p>Error :(</p>;
     
       // Sets GraphQL query in state - ideally we want to make just a single call during the user session
+      // Then save that in state and make sure query is only needed to be made under special circumstances
       setData(data.countries);    
 
       // Checks if country is available in state
@@ -48,10 +49,6 @@ const GET_COUNTRIES = gql`
     }
     
     const IfiniteComponent = ({ id }: { id: number }) => {
-      useEffect(() => {
-        fetch(finalData)
-          .then((res) => res)
-      }, []);
       return (
         <div className={scss.displayInfiniteCards}>
           {DisplayInfiniteCards(id)}
