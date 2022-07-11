@@ -15,12 +15,12 @@ describe("Card Component", () => {
       languages: [
         {
           name: 'English',
-        code: 'En'
+          code: 'En'
         }
       ],
       translation: {
         cta: 'Find out more',
-        capital: 'Capital',
+        capital: 'Capital'
       }
     };
   });

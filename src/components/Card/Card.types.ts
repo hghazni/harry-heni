@@ -6,14 +6,14 @@ export interface CardProps {
   capital: string,
   onClick: () => void,
   className?: string,
-  languages: [
-    {
-      name: string,
-      code?: string
-    }
-  ],
+  languages: languagesType[],
   translation: {
     cta: string
     capital: string,
   }
+}
+
+export type languagesType = {
+  name: string,
+  code?: string
 }
